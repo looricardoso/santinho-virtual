@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+
 body {
     min-height: 100vh;
     display: flex;
@@ -10,7 +15,14 @@ img {
     max-width: 100%;
 }
 
-#foto {}
+#foto {
+    background-color: rgba(192, 192, 192, 0.459);
+}
+
+#foto:hover {
+    transform: perspective(200px) translateZ(37px);
+    background-color: rgba(255, 255, 255, 0);
+}
 
 #santinho {
     height: 600px;
@@ -23,14 +35,86 @@ img {
 h1 {
     margin: 0px;
     padding: 0px;
+    font-family: 'Parisienne', cursive;
+    text-align: center;
+    font-size: 3em;
+    animation: myanimation 2s infinite alternate;
 }
 
-#cargo {}
+@keyframes myanimation {
+    0% {
+        background-color: white;
+        color: green;
+    }
+    100% {
+        background-color: green;
+        color: white;
+    }
+}
 
-#slogan {}
+#cargo {
+    font-family: 'Indie Flower', cursive;
+    font-size: 2em;
+    height: 0px;
+    animation: cargo 2.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
 
-#final {}
+@keyframes cargo {
+    0% {
+    }
+    100% {
+        transform: translatey(20px) translateX(280px);
+    }
+}
 
-#numero {}
+#slogan {
+    text-align: center;
+    font-size: 1.5em;
+    font-family: 'Indie Flower', cursive;
+    background-color: rgba(0, 128, 0, 0.700);
+}
 
-#partido {}
+#final {
+    background-color: darkgreen;
+    padding: 10px;
+}
+
+#numero {
+    text-align: center;
+    transform: translateX(-75px) translateY(25px) rotate(-15deg);
+    font-size: 2.5em;
+    font-family: 'Nunito', sans-serif;
+    animation: numero 0.4s infinite alternate;
+}
+
+#partido {
+    text-align: center;
+    transform: translateX(75px) translateY(-35px) rotate(-15deg);
+    font-size: 2.5em;
+    font-family: 'Nunito', sans-serif;
+
+}
+
+#partido:hover {
+    animation: partido 0.4s infinite alternate;
+}
+
+@keyframes partido {
+    0% {
+        transform: translateX(75px) translateY(-35px) rotate(-15deg);
+    }
+    100% {
+        transform: translateX(75px) translateY(-35px) rotate(15deg);
+    }
+}
+
+@keyframes numero {
+    0% {
+        transform: translateX(-75px) translateY(25px) rotate(-15deg) perspective(200px) translateZ(0px);
+    }
+    100% {
+        transform: translateX(-75px) translateY(25px) rotate(-15deg) perspective(200px) translateZ(70px);
+    }
+}
